@@ -11,6 +11,7 @@
     <modules>
         <module>elasticsearch-exec</module>
         <module>hbase-exec</module>
+        <module>spark-exec</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -20,12 +21,14 @@
                 <artifactId>elasticsearch-rest-high-level-client</artifactId>
                 <version>7.13.4</version>
             </dependency>
+            <!--es-->
             <!--hbase-->
             <dependency>
                 <groupId>org.apache.hbase</groupId>
                 <artifactId>hbase-client</artifactId>
                 <version>2.2.7</version>
             </dependency>
+            <!--hbase-->
             <!--日志-->
             <dependency>
                 <groupId>org.slf4j</groupId>
@@ -37,11 +40,19 @@
                 <artifactId>slf4j-log4j12</artifactId>
                 <version>1.7.10</version>
             </dependency>
+            <!--日志-->
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
                 <version>2.14.1</version>
             </dependency>
+            <!--spark-sql-->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-sql_2.11</artifactId>
+                <version>2.4.3</version>
+            </dependency>
+            <!--spark-sql-->
         </dependencies>
     </dependencyManagement>
 
