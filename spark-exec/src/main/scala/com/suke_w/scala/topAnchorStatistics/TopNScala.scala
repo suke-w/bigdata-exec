@@ -20,6 +20,7 @@ object TopNScala {
       val area = video_info_object.getString("area")
       (vid, (uid, area))
     })//.foreach(println(_))
+    video_info_field_RDD.foreach(println(_))
     val gift_record_fieldRDD = gift_recordRDD.map(tup => {
       val gift_record_object = JSON.parseObject(tup)
       val vid = gift_record_object.getString("vid")
@@ -29,8 +30,10 @@ object TopNScala {
 
 
     val gift_record_fieldAggRDD = gift_record_fieldRDD.reduceByKey(_ + _)
+    gift_record_fieldAggRDD.foreach(println(_))
     //(14943445328940019,((8407173251010,ID),2030))
     val joinRDD = video_info_field_RDD.join(gift_record_fieldAggRDD)
+
     /** 查重 */
     //joinRDD.map(tup => {
     //  (tup._1,1)
