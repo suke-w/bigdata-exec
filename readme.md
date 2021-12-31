@@ -8,4 +8,6 @@ sparksql java api 对接.del文件
     .del文件切分后，组装Row时date类型在程序中需由java.sql.Date解析，用java.util.Date解析会报错
         new java.sql.Date(new SimpleDateFormat("yyyy-MM-dd").parse("2020-12-21").getTime)
     完善补充spark解析
+问题3：
+    spark-submit脚本参数--files
 ----------------------------------------------------------------------------------------------------------
