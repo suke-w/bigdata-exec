@@ -14,7 +14,7 @@ object SqlDemoScala {
       .config(conf)
       .getOrCreate()
 
-    val frame_student = sparkSession.read.json("D:\\student.text")
+    val frame_student = sparkSession.read.json("D:\\student.json")
 
     /**
      * DataFrame的算子操作

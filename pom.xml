@@ -74,15 +74,6 @@
             </dependency>
             <!--spark-exec-->
 
-            <!--mapreduce-exec-->
-            <!-- hadoop的依赖 -->
-            <dependency>
-                <groupId>org.apache.hadoop</groupId>
-                <artifactId>hadoop-client</artifactId>
-                <version>3.2.0</version>
-                <!--<scope>provided</scope>-->
-            </dependency>
-            <!--mapreduce-exec-->
         </dependencies>
     </dependencyManagement>
 

@@ -16,15 +16,15 @@ public class SqlDemoJava {
                 .config(conf)
                 .getOrCreate();
 
-        Dataset<Row> dataset_student = sparkSession.read().json("D:\\student.text");
+        Dataset<Row> dataset_student = sparkSession.read().json("D:\\student.json");
 
         /**
          * DataFrame的算子操作
          */
         //dataset_student.show();
-        RelationalGroupedDataset ageGroup = dataset_student.groupBy("age");
+        /*RelationalGroupedDataset ageGroup = dataset_student.groupBy("age");
         Dataset<Row> count = ageGroup.count();
-        //count.show();
+        count.show();*/
 
         //dataset_student.filter(col("age").gt("18")).show();
         //dataset_student.where(col("age").gt("18")).show();
@@ -35,7 +35,7 @@ public class SqlDemoJava {
          * DataFrame的sql操作
          */
         dataset_student.createOrReplaceTempView("stu");
-        sparkSession.sql("select * from stu where age > 18").show();
+        sparkSession.sql("select * from stu").show();
         sparkSession.stop();
 
     }
