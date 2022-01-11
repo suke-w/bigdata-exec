@@ -38,7 +38,6 @@ object Rdd2DataFrameByProgrameScala {
       .foreach(println(_))
 
 
-
     sparkSession.stop()
 
   }

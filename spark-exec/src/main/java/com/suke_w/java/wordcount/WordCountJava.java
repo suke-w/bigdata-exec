@@ -10,7 +10,9 @@ import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.api.java.function.VoidFunction;
 import scala.Tuple2;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Iterator;
 
 public class WordCountJava {
@@ -35,6 +37,7 @@ public class WordCountJava {
                 return new Tuple2<String, Integer>(s, 1);
             }
         });
+
 
         JavaPairRDD<String, Integer> reduceRDD = pairRDD.reduceByKey(new Function2<Integer, Integer, Integer>() {
             @Override

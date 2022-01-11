@@ -4,7 +4,8 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 object WordCountScalaSubmit {
   def main(args: Array[String]): Unit = {
-    val conf = new SparkConf().setMaster("local").setAppName("WordCountScala")
+    val conf = new SparkConf().setAppName("WordCountScalaSubmit")
+      //.setMaster("local")
     val sc = new SparkContext(conf)
 
     var inputPath = "D:\\hello.txt"
